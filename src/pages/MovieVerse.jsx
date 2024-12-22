@@ -5,17 +5,10 @@ import MovieCard from "../components/MovieCard";
 const API_URL = "http://www.omdbapi.com?apikey=65b57874";
 // 'https://via.placeholder.com/400'
 
-// const movieSample = {
-// 	Title: "Spiderman",
-// 	Year: "2010",
-// 	imdbID: "tt1785572",
-// 	Type: "movie",
-// 	Poster: "N/A",
-// };
-
 const MovieVerse = () => {
 	const [movies, setMovies] = useState([]);
 	const [searchTerm, setSearchTerm] = useState("");
+
 	const fetchMovies = async (title) => {
 		const response = await fetch(`${API_URL}&s=${title}`);
 		const movieData = await response.json();
